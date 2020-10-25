@@ -25,7 +25,7 @@ import javax.inject.Named;
  */
 @Named
 @ViewScoped
-public class FuncinarioBean implements Serializable {
+public class FuncionarioBean implements Serializable {
 
     @Inject
     private Funcionarios funcionario;

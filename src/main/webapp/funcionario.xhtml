@@ -6,20 +6,20 @@
                 xmlns:p="http://primefaces.org/ui">
 
     <f:metadata>
-        <f:viewParam name="funcionarioId" value="#{funcinarioBean.funcionario.idFuncionario}"/>
-        <f:viewAction action="#{funcinarioBean.carregarFuncionariosPeloId}" if="#{param.funcionarioId!= null}"/>        
+        <f:viewParam name="funcionarioId" value="#{funcionarioBean.funcionario.idFuncionario}"/>
+        <f:viewAction action="#{funcionarioBean.carregarFuncionariosPeloId}" if="#{param.funcionarioId!= null}"/>        
     </f:metadata>
 
 
     <ui:define name="content">
 
-        <h2 class="page-header">Gerenciar De Funcinários</h2>
+        <h2 class="page-header">Funcionários</h2>
         <br/>
         <h:form id="formFuncionario">
             <p:messages id="messages" showDetail="true" closable="true" />
 
             <div align="center">
-                <p:dataTable var="listaFun" value="#{funcinarioBean.funnariosList}"
+                <p:dataTable var="listaFun" value="#{funcionarioBean.funcionariosList}"
                              id="tabela2" emptyMessage="Nenhum registro encontrado"
                              paginatorTemplate="{RowsPerPageDropdown} {CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
                              paginator="true" rows="10" rowsPerPageTemplate="5,10,25,50,100,9999" style="width:100%">
@@ -46,11 +46,11 @@
                     <p:column headerText="Opções" exportable="false">
                         <center>
                             <p:commandButton icon="ui-icon-pencil" value="Editar" onclick="PF('record').show();" update="formFuncionario:panelRecord" process="@this"> 
-                                <f:setPropertyActionListener target="#{funcinarioBean.funcionario}"
+                                <f:setPropertyActionListener target="#{funcionarioBean.funcionario}"
                                                              value="#{listaFun}" />
                             </p:commandButton>
 
-                            <p:commandButton icon="ui-icon-trash" value="Deletar" action="#{funcinarioBean.remover(listaFun)}" process="@this" update="@form"/>
+                            <p:commandButton icon="ui-icon-trash" value="Deletar" action="#{funcionarioBean.remover(listaFun)}" process="@this" update="@form"/>
 
                         </center>
                     </p:column>
