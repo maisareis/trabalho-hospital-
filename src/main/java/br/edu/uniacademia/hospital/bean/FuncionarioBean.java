@@ -39,7 +39,7 @@ public class FuncionarioBean implements Serializable {
 
     private Long enderecoId;
 
-    private List<Funcionarios> funnariosList;
+    private List<Funcionarios> funcionariosList;
 
     @Inject
     private FuncionarioDAO fundao;
@@ -81,11 +81,11 @@ public class FuncionarioBean implements Serializable {
         return funcionario;
     }
 
-    public List<Funcionarios> getFunnariosList() {
-        if (this.funnariosList == null) {
-            this.funnariosList = this.fundao.listaTodos();
+    public List<Funcionarios> getFuncionariosList() {
+        if (this.funcionariosList == null) {
+            this.funcionariosList = this.fundao.listaTodos();
         }
-        return funnariosList;
+        return funcionariosList;
     }
 
     public List<TipoFuncionario> getTipoFuncionarios() {
@@ -113,12 +113,12 @@ public class FuncionarioBean implements Serializable {
             this.gravarTipoFuncionario();
             this.funcionario.setEnderecosidEnderecos(this.enderecos);
             this.fundao.adiciona(this.funcionario);
-            this.funnariosList = this.fundao.listaTodos();
+            this.funcionariosList = this.fundao.listaTodos();
         } else {
             this.enddao.atualiza(this.enderecos);
             this.gravarTipoFuncionario();
             this.fundao.atualiza(this.funcionario);
-            this.funnariosList = this.fundao.listaTodos();
+            this.funcionariosList = this.fundao.listaTodos();
         }
         this.funcionario = new Funcionarios();
         this.enderecos = new Enderecos();
@@ -131,7 +131,7 @@ public class FuncionarioBean implements Serializable {
         System.out.println("Removendo Funcionario " + funcionario.getNomeFuncionario());
         this.fundao.remove(funcionario);
         this.enddao.remove(funcionario.getEnderecosidEnderecos());
-        this.funnariosList = this.fundao.listaTodos();
+        this.funcionariosList = this.fundao.listaTodos();
     }
 
     public void carregar(Funcionarios funcionario) {

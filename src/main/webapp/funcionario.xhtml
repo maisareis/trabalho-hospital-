@@ -42,6 +42,9 @@
                     <p:column headerText="Tipo Funcionario" sortBy="#{listaFun.tipoFuncionarioidtipoFuncionario.nomeTipoFuncionario}" filterBy="#{listaFun.tipoFuncionarioidtipoFuncionario.nomeTipoFuncionario}">
                         <p:outputLabel value="#{listaFun.tipoFuncionarioidtipoFuncionario.nomeTipoFuncionario}"/>                        
                     </p:column>
+                    <p:column headerText="Endereço" sortBy="#{listaFun.EnderecoidEndereco}" filterBy="#{listaFun.EnderecoidEndereco}">
+                        <p:outputLabel value="#{listaFun.EnderecoidEndereco}"/>                        
+                    </p:column>
 
                     <p:column headerText="Opções" exportable="false">
                         <center>
@@ -93,45 +96,45 @@
 
                 <p:panelGrid id="panelRecord" columns="2"> 
                     Nome:
-                    <p:inputText id="funcionario" value="#{funcinarioBean.funcionario.nomeFuncionario}" required="true" />
+                    <p:inputText id="funcionario" value="#{funcionarioBean.funcionario.nomeFuncionario}" required="true" />
                     <p:outputLabel value="CPF:" for="cpf"/>
-                    <p:inputMask id="cpf" value="#{funcinarioBean.funcionario.cpf}" mask="99999999999" placeholder="99999999999" required="true"/>
+                    <p:inputMask id="cpf" value="#{funcionarioBean.funcionario.cpf}" mask="99999999999" placeholder="99999999999" required="true"/>
                     <p:outputLabel for="rg" value="RG:"/>
-                    <p:inputMask id="rg" value="#{funcinarioBean.funcionario.rg}" mask="aa99999999" placeholder="MG99999999" required="true"/>
+                    <p:inputMask id="rg" value="#{funcionarioBean.funcionario.rg}" mask="aa99999999" placeholder="MG99999999" required="true"/>
                     <p:outputLabel for="crm" value="CRM:"/>
-                    <p:inputMask id="crm" value="#{funcinarioBean.funcionario.crm}" mask="aa999" placeholder="SP999" required="true"/>  
+                    <p:inputMask id="crm" value="#{funcionarioBean.funcionario.crm}" mask="aa999" placeholder="SP999" required="true"/>  
                     <p:outputLabel value="Selecione o Tipo de Funcionario:" for="tipoFuncionario"/>
-                    <p:selectOneMenu value="#{funcinarioBean.tipoFuncionarioId}" id="tipoFuncionario" >
-                        <f:selectItems value="#{funcinarioBean.tipoFuncionarios}" var="tipoFuncionario"
+                    <p:selectOneMenu value="#{funcionarioBean.tipoFuncionarioId}" id="tipoFuncionario" >
+                        <f:selectItems value="#{funcionarioBean.tipoFuncionarios}" var="tipoFuncionario"
                                        itemLabel="#{tipoFuncionario.nomeTipoFuncionario}" itemValue="#{tipoFuncionario.idtipoFuncionario}"/>
                     </p:selectOneMenu>
 
                     <p:outputLabel value="Logradouro" for="logradouro"/>
-                    <p:inputText id="logradouro" value="#{funcinarioBean.enderecos.logradouro}"/>
+                    <p:inputText id="logradouro" value="#{funcionarioBean.enderecos.logradouro}"/>
 
                     <p:outputLabel value="Localidade" for="localidade"/>
-                    <p:inputText id="localidade" value="#{funcinarioBean.enderecos.localidade}"/>
+                    <p:inputText id="localidade" value="#{funcionarioBean.enderecos.localidade}"/>
 
                     <p:outputLabel value="CEP" for="cep"/>
-                    <p:inputMask id="cep" value="#{funcinarioBean.enderecos.cep}"  mask="99999999"/>
+                    <p:inputMask id="cep" value="#{funcionarioBean.enderecos.cep}"  mask="99999999"/>
 
                     <p:outputLabel value="Complemento" for="complemneto"/>
-                    <p:inputText id="complemneto" value="#{funcinarioBean.enderecos.complemento}"/>
+                    <p:inputText id="complemneto" value="#{funcionarioBean.enderecos.complemento}"/>
 
                     <p:outputLabel value="Numero" for="numero"/>
-                    <p:inputText id="numero" value="#{funcinarioBean.enderecos.numero}" type="number"/>
+                    <p:inputText id="numero" value="#{funcionarioBean.enderecos.numero}" type="number"/>
 
                     <p:outputLabel value="UF" for="uf"/>
-                    <p:inputMask id="uf" value="#{funcinarioBean.enderecos.uf}" mask="aa" maxlength="2"/>
+                    <p:inputMask id="uf" value="#{funcionarioBean.enderecos.uf}" mask="aa" maxlength="2"/>
 
                     <p:outputLabel value="Bairro" for="bairro"/>
-                    <p:inputText id="bairro" value="#{funcinarioBean.enderecos.bairro}"/>
+                    <p:inputText id="bairro" value="#{funcionarioBean.enderecos.bairro}"/>
 
                 </p:panelGrid>
 
                 <br/>
                 <p:commandButton value="Salvar"  
-                                 actionListener="#{funcinarioBean.gravar}" onclick="record.hide()" alt="Record"/> 
+                                 actionListener="#{funcionarioBean.gravar}" onclick="record.hide()" alt="Record"/> 
                 
             </p:dialog>
 
