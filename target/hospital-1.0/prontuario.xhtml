@@ -36,9 +36,7 @@
                     <p:column headerText="Observação" sortBy="#{listaPro.observacoes}" filterBy="#{listaPro.observacoes}">
                         <p:outputLabel value="#{listaPro.observacoes}"/>                        
                     </p:column>
-                    <p:column headerText="Descrição" sortBy="#{listaPro.descricao}" filterBy="#{listaPro.descricao}">
-                        <p:outputLabel value="#{listaPro.descricao}"/>                        
-                    </p:column>
+                    
                     <p:column headerText="Data" sortBy="#{listaPro.data.time}" filterBy="#{listaPro.data.time}">
                         <p:outputLabel value="#{listaPro.data.time}">
                             <f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/São_Paulo"/>
@@ -111,9 +109,6 @@
 
                     <p:outputLabel for="prontuario" value="Observação"/>
                     <p:inputText id="prontuario" value="#{prontuarioBean.prontuarios.observacoes}"  />
-
-                    <p:outputLabel value="Descrição:" for="descricao"/>
-                    <p:inputMask id="descricao" value="#{prontuarioBean.prontuarios.descricao}"/>
 
                     <p:outputLabel value="Data:" for="data" />
                     <p:calendar id="data" value="#{prontuarioBean.prontuarios.data.time}" timeZone="America/Sao_Paulo" pattern="dd/MM/yyyy" mask="true" disabled="true" />
